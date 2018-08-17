@@ -24,7 +24,7 @@ float NNode::getActivation() {
 void NNode::addNode(NNode* node){
 	if (!inputNode){
 		prevNodes->add(node);
-		prevWeights->add(0.0);
+		prevWeights->add(1.0);
 	}	
 }
 
@@ -161,8 +161,6 @@ void NNode::backProp(float adjustment){
 	bias += biasInfluence(adjustment);
 	for (int i = 0; i < elements; i++){
 		prevWeights[i] += weightAdjust[i];
-		prevNodes[i]->backProp(nodeAdjust[i]);
 	}
-
-
+	return nodeAdjust;
 }

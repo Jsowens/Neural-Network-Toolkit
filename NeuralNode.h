@@ -1,6 +1,5 @@
 //NuralNode.h - This is the base unit for a nural network. 
 //Author: Joseph Owens	Creation Date: 8/15/18
-//Version: 1.0			Last Updated: 8/16/18
 
 #ifndef NEURALNODE_H
 #define NEURALNODE_H
@@ -84,7 +83,7 @@ public:
 
 	double calcCost(vector<float>*, int);
 
-	void backProp(float);
+	vector<float>* backProp(float);
 };
 
 #endif
